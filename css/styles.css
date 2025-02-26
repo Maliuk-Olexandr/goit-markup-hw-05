@@ -29,7 +29,11 @@ img {
   display: block;
   width: 100%;
 }
-
+button {
+  font-family: inherit;
+  color: currentColor;
+  cursor: pointer;
+}
 /* хедер меню */
 .header-menu {
   border-bottom: 1px solid #e7e9fc;
@@ -105,6 +109,7 @@ img {
 /* блок перший - замовлення */
 
 .business {
+  max-width: 1440px;
   background-color: #2e2f42;
   background-image: linear-gradient(
       rgba(46, 47, 66, 0.7),
@@ -154,7 +159,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 112px;
+  min-height: 112px;
   background: #f4f4fd;
   border: 1px solid #8e8f99;
   border-radius: 4px;
@@ -278,13 +283,15 @@ img {
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   color: #f4f4fd;
   font-size: 16px;
-line-height: 1.5;
-letter-spacing: 0.02em;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
   padding: 40px 32px;
 }
 /* блок footer */
 .footer {
   background-color: #2e2f42;
+  padding: 100px 0;
+  margin: 0 auto;
 }
 .logo-text-footer {
   color: #f4f4fd;
@@ -293,7 +300,7 @@ letter-spacing: 0.02em;
   color: #f4f4fd;
   width: 264px;
 }
-.footer-social{
+.footer-title {
   color: #fff;
   font-size: 16px;
   font-weight: 500;
@@ -304,7 +311,6 @@ letter-spacing: 0.02em;
 /* -----------align---------------- */
 .section {
   padding: 120px 0;
-  max-width: 1440px;
   margin: 0 auto;
 }
 .container {
@@ -347,12 +353,6 @@ letter-spacing: 0.02em;
 .team-card-desc {
   padding: 32px 0;
 }
-
-.footer {
-  padding: 100px 0;
-  max-width: 1440px;
-  margin: 0 auto;
-}
 footer .logo {
   display: inline-block;
   margin: 0 0 16px 0;
@@ -374,9 +374,262 @@ footer .logo {
   display: flex;
   align-items: baseline;
 }
-.footer .team-social-list{
+.footer .team-social-list {
   gap: 16px;
 }
-.footer-info{
+.footer-info {
   margin-right: 120px;
 }
+.social {
+  margin-right: 80px;
+}
+.footer-send {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+.footer-input {
+  outline: none;
+  background-color: #2e2f42;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  min-width: 264px;
+  min-height: 40px;
+  padding: 8px 10px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+  color: #fff;
+  transition: border 250ms ease-in-out;
+}
+.footer-input:hover,
+.footer-input:focus {
+  border: 1px solid #31d0aa;
+}
+.footer-input::placeholder {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  color: #fff;
+  transition: color 250ms ease-in-out;
+}
+.footer-button {
+  display: flex;
+  gap: 16px;
+  border: 0;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #fff;
+  border-radius: 4px;
+  padding: 8px 24px;
+  min-width: 165px;
+  min-height: 40px;
+  background-color: #4d5ae5;
+  transition: background-color 250ms ease-in-out;
+}
+.footer-input:hover::placeholder,
+.footer-input:focus::placeholder {
+  color: #31d0aa;
+}
+.footer-button:hover,
+.footer-button:focus {
+  background-color: #31d0aa;
+}
+.send {
+  fill: #fff;
+}
+.subscribe-label {
+  display: none;
+}
+
+/* ---modal-overlay--- */
+.modal-overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 250ms ease-in-out;
+}
+.modal-overlay.is-open {
+  opacity: 0;
+  pointer-events: none; /* змінити на none */
+}
+.modal {
+  display: flex;
+  align-items: center;
+  max-width: 408px;
+  flex-direction: column;
+  /* position: fixed;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%; */
+  border-radius: 4px;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12),
+    0 2px 1px 0 rgba(0, 0, 0, 0.2);
+  background-color: #fcfcfc;
+  padding: 24px;
+}
+.close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px #e7e9fc;
+  border-radius: 100%;
+  min-width: 24px;
+  min-height: 24px;
+  transition-property: border, background-color, fill;
+  transition-duration: 250ms;
+  transition-timing-function: ease-in-out;
+  background-color: #e7e9fc;
+  fill: #2e2f42;
+  margin-bottom: 24px;
+}
+.close:hover,
+.close:focus {
+  border: 0;
+  background-color: #404bbf;
+  fill: #fff;
+}
+.modal .close {
+  align-self: flex-end;
+}
+.modal-form-desc {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: #2e2f42;
+  margin-bottom: 16px;
+}
+.form-field {
+  width: 100%;
+  margin-bottom: 8px;
+}
+.form-field.last {
+  margin-bottom: 16px;
+}
+.modal-label {
+  display: block;
+  font-size: 12px;
+  line-height: 1.16667;
+  letter-spacing: 0.04em;
+  color: #8e8f99;
+  margin-bottom: 4px;
+}
+.input-box {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 4px;
+  background-color: #fcfcfc;
+  padding-left: 38px;
+  min-height: 40px;
+  transition: border 250ms ease-in-out;
+}
+.svg-input {
+  fill: #2e2f42;
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+  transition: fill 250ms ease-in-out;
+}
+.user-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: #fcfcfc;
+  padding: 0;
+}
+.modal-text-area {
+  display: block;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 4px;
+  min-width: 100%;
+  min-height: 120px;
+  resize: none;
+  outline: none;
+  padding: 8px 16px;
+  transition: border 250ms ease-in-out;
+}
+.modal-text-area::placeholder .lic-desc {
+  font-size: 12px;
+  line-height: 1.16667;
+  letter-spacing: 0.04em;
+  color: #8e8f99;
+}
+.lic-link {
+  line-height: 1.33333;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: #4d5ae5;
+}
+.input-box:hover .svg-input {
+  fill: #4d5ae5;
+}
+
+.user-input:focus + .svg-input {
+  fill: #4d5ae5;
+}
+.input-box:hover,
+.input-box:focus,
+.modal-text-area:hover,
+.input-box:focus-within,
+.modal-text-area:focus {
+  border: 1px solid #4d5ae5;
+}
+.modal-text-area::placeholder {
+  font-size: 12px;
+  line-height: 1.16667;
+  letter-spacing: 0.04em;
+  color: rgba(46, 47, 66, 0.4);
+}
+.modal-text-area:focus::placeholder {
+  color: #4d5ae5;
+}
+.lic-desc {
+  font-size: 12px;
+  line-height: 1.16667;
+  letter-spacing: 0.04em;
+  color: #8e8f99;
+  padding-left: 24px;
+}
+.licens{
+  position: relative;
+}
+.wrapper {
+  cursor: pointer;
+}
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 16px;
+  width: 16px;
+  border-radius: 2px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+}
+/* When the checkbox is checked, add a blue background */
+input:checked ~.checkmark{
+background-color: #4d5ae5;
+border-color: #4d5ae5;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.custom-check {
+  top: 3px;
+  left: 2px;
+  position: absolute;
+  fill: #fcfcfc;
+}
+
+
