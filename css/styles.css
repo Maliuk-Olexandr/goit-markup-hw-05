@@ -390,7 +390,7 @@ footer .logo {
 }
 .footer-input {
   outline: none;
-  background-color: #2e2f42;
+  background-color: transparent;
   border: 1px solid #fff;
   border-radius: 4px;
   min-width: 264px;
@@ -399,6 +399,9 @@ footer .logo {
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
   color: #fff;
   transition: border 250ms ease-in-out;
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.04em;
 }
 .footer-input:hover,
 .footer-input:focus {
@@ -445,7 +448,7 @@ footer .logo {
 
 /* ---modal-overlay--- */
 .modal-overlay {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(46, 47, 66, 0.4);
   position: fixed;
   top: 0;
   left: 0;
@@ -454,18 +457,17 @@ footer .logo {
   z-index: 999;
   opacity: 1;
   pointer-events: auto;
-  transition: opacity 250ms ease-in-out;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-overlay.is-open {
   opacity: 0;
-  pointer-events: none; /* змінити на none */
+  pointer-events: none;
 }
 .modal {
-  display: flex;
-  align-items: center;
-  max-width: 408px;
-  flex-direction: column;
-  position: fixed;
+  width: 408px;
+  min-height: 584px;
+  position: absolute;
   transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
@@ -474,6 +476,12 @@ footer .logo {
     0 2px 1px 0 rgba(0, 0, 0, 0.2);
   background-color: #fcfcfc;
   padding: 24px;
+}
+.modal-form{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
 }
 .close {
   display: flex;
@@ -602,7 +610,7 @@ footer .logo {
   color: #8e8f99;
   padding-left: 24px;
 }
-.licens{
+.licens {
   position: relative;
   margin-bottom: 24px;
 }
@@ -620,9 +628,9 @@ footer .logo {
   border: 1px solid rgba(46, 47, 66, 0.4);
 }
 /* When the checkbox is checked, add a blue background */
-input:checked ~.checkmark{
-background-color: #4d5ae5;
-border-color: #4d5ae5;
+input:checked ~ .checkmark {
+  background-color: #4d5ae5;
+  border-color: #4d5ae5;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
@@ -632,5 +640,3 @@ border-color: #4d5ae5;
   position: absolute;
   fill: #fcfcfc;
 }
-
-
