@@ -604,6 +604,7 @@ footer .logo {
 }
 .licens{
   position: relative;
+  margin-bottom: 24px;
 }
 .wrapper {
   cursor: pointer;
