@@ -663,19 +663,22 @@
               placeholder="Text input"
             ></textarea>
           </div>
-          <div class="licens">
-            <label class="wrapper">
-              <input class="visually-hidden" type="checkbox" />
+          <div class="license">
+            <input
+              class="visually-hidden"
+              type="checkbox"
+              id="user-privacy"
+              value="true"
+            />
+            <label class="license-desc" for="user-privacy">
               <span class="checkmark">
                 <svg class="custom-check" width="10" height="8">
                   <use href="./images/icons.svg#icon-check"></use>
                 </svg>
               </span>
-            </label>
-            <p class="lic-desc">
               I accept the terms and conditions of the
-              <a class="lic-link" href="#">Privacy Policy</a>
-            </p>
+              <a class="license-link" href="#">Privacy Policy</a>
+            </label>
           </div>
         </form>
         <button class="order-button" type="submit">Send</button>
