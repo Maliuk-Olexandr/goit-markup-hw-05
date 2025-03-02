@@ -393,9 +393,9 @@ footer .logo {
   background-color: transparent;
   border: 1px solid #fff;
   border-radius: 4px;
-  min-width: 264px;
-  min-height: 40px;
-  padding: 8px 10px;
+  width: 264px;
+  height: 40px;
+  padding-left: 16px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
   color: #fff;
   transition: border 250ms ease-in-out;
@@ -417,7 +417,8 @@ footer .logo {
 }
 .footer-button {
   display: flex;
-  gap: 16px;
+  align-items: center;
+  justify-content: center;
   border: 0;
   font-weight: 500;
   font-size: 16px;
@@ -441,11 +442,8 @@ footer .logo {
 }
 .send {
   fill: #fff;
+  margin-left: 16px;
 }
-.subscribe-label {
-  display: none;
-}
-
 /* ---modal-overlay--- */
 .modal-overlay {
   background-color: rgba(46, 47, 66, 0.4);
@@ -477,11 +475,10 @@ footer .logo {
   background-color: #fcfcfc;
   padding: 24px;
 }
-.modal-form{
+.modal-form {
   display: flex;
   align-items: center;
   flex-direction: column;
-
 }
 .close {
   display: flex;
