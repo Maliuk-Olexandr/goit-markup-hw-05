@@ -597,14 +597,14 @@
       </div>
     </footer>
     <!-- modal window is-open-->
-    <div class="modal-overlay is-open">
-      <div class="modal">        
+    <div class="modal-overlay">
+      <div class="modal">
+        <button class="close" type="button" name="close">
+          <svg class="modal-svg" width="8" height="8">
+            <use xlink:href="./images/icons.svg#icon-close"></use>
+          </svg>
+        </button>
         <form class="modal-form" name="user-data" method="post">
-          <button class="close" type="button" name="close">
-            <svg class="modal-svg" width="8" height="8">
-              <use xlink:href="./images/icons.svg#icon-close"></use>
-            </svg>
-          </button>
           <p class="modal-form-desc">
             Leave your contacts and we will call you back
           </p>
@@ -653,7 +653,7 @@
               </svg>
             </div>
           </div>
-  
+
           <div class="form-field last">
             <label class="modal-label" for="comment">Comment</label>
             <textarea
@@ -677,8 +677,8 @@
               <a class="lic-link" href="#">Privacy Policy</a>
             </p>
           </div>
-          <button class="order-button" type="submit">Send</button>
         </form>
+        <button class="order-button" type="submit">Send</button>
       </div>
     </div>
   </body>
