@@ -601,20 +601,20 @@
       <div class="modal">
         <button class="close" type="button" name="close">
           <svg class="modal-svg" width="8" height="8">
-            <use xlink:href="./images/icons.svg#icon-close"></use>
+            <use href="./images/icons.svg#icon-close"></use>
           </svg>
         </button>
+        <p class="modal-form-desc">
+          Leave your contacts and we will call you back
+        </p>
         <form class="modal-form" name="user-data" method="post">
-          <p class="modal-form-desc">
-            Leave your contacts and we will call you back
-          </p>
           <div class="form-field">
             <label class="modal-label" for="user-name">Name</label>
             <div class="input-box">
               <input
                 class="user-input"
                 type="text"
-                name="name"
+                name="user-name"
                 id="user-name"
                 required
               />
@@ -655,11 +655,11 @@
           </div>
 
           <div class="form-field last">
-            <label class="modal-label" for="comment">Comment</label>
+            <label class="modal-label" for="user-comment">Comment</label>
             <textarea
               class="modal-text-area"
-              name="comment"
-              id="comment"
+              name="user-comment"
+              id="user-comment"
               placeholder="Text input"
             ></textarea>
           </div>
