@@ -62,7 +62,7 @@
       <section class="section business">
         <div class="container">
           <h1 class="business-h-one">Effective Solutions for Your Business</h1>
-          <button type="button" class="order-button">Order Service</button>
+          <button type="button" class="order-button" data-modal-open>Order Service</button>
         </div>
       </section>
       <!-- #endregion Order Service with button -->
@@ -597,9 +597,9 @@
       </div>
     </footer>
     <!-- modal window is-open-->
-    <div class="modal-overlay is-open">
+    <div class="modal-overlay" data-modal>
       <div class="modal">
-        <button class="close" type="button" >
+        <button class="close" type="button" data-modal-close>
           <svg class="modal-svg" width="8" height="8">
             <use href="./images/icons.svg#icon-close"></use>
           </svg>
